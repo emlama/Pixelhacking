@@ -1,0 +1,18 @@
+---
+layout: default
+title: Pixelhacking.com - A blog about the parts and pieces.
+class-name: home-page
+
+---
+<div class="left">
+	<article class="post">
+	    <h1>{{ site.posts.first.title }}</h1>
+	    <p class="date">Published {{ site.posts.first.date | date: "%A %B %d %Y"}}</p>
+
+	    {{site.posts.first.content}}
+	</article>
+
+	{% include related_posts.html %}
+</div>
+
+{% include sidebar.html %}

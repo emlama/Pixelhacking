@@ -1,0 +1,17 @@
+---
+layout: default
+title: Pixelhacking.com - A blog about the parts and pieces.
+class-name: default
+
+---
+
+<article>
+  <h1>All Posts</h1>
+  <ul class="unstyled">
+    {% for post in site.posts %}	
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> <span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</article>

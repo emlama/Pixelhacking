@@ -1,0 +1,404 @@
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* To use the light Solarized highlighting theme uncomment the following line */
+/* If you want to tweak the Solarized colors you can do that here */
+/* Non highlighted code colors */
+/* line 77, ../sass/styles.scss */
+body {
+  font-size: 24px;
+  line-height: 40px;
+  font-family: omnes-pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0px;
+  background-color: #f2f2ed;
+  color: #333333;
+}
+
+/* line 88, ../sass/styles.scss */
+p {
+  margin-bottom: 40px;
+}
+
+/* line 92, ../sass/styles.scss */
+a:link {
+  color: #0066cc;
+}
+
+/* line 93, ../sass/styles.scss */
+a:visited {
+  color: #990099;
+}
+
+/* line 94, ../sass/styles.scss */
+a:hover {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* line 100, ../sass/styles.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0;
+  font-family: sirba-web, Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 1;
+  color: black;
+  text-rendering: optimizelegibility;
+}
+/* line 107, ../sass/styles.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+/* line 113, ../sass/styles.scss */
+h1 {
+  font-size: 52px;
+  line-height: 62px;
+}
+
+/* line 114, ../sass/styles.scss */
+h2 {
+  font-size: 36px;
+  line-height: 45px;
+}
+
+/* line 115, ../sass/styles.scss */
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+/* line 116, ../sass/styles.scss */
+h4 {
+  font-size: 24px;
+  line-height: 27px;
+}
+
+/* line 117, ../sass/styles.scss */
+h5 {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* line 118, ../sass/styles.scss */
+h6 {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* line 120, ../sass/styles.scss */
+h1 small {
+  font-size: 24px;
+}
+
+/* line 121, ../sass/styles.scss */
+h2 small {
+  font-size: 18px;
+}
+
+/* line 122, ../sass/styles.scss */
+h3 small {
+  font-size: 14px;
+}
+
+/* line 123, ../sass/styles.scss */
+h4 small {
+  font-size: 14px;
+}
+
+/* line 130, ../sass/styles.scss */
+ul {
+  list-style: disc;
+}
+
+/* line 134, ../sass/styles.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 138, ../sass/styles.scss */
+ul, ol {
+  padding: 0;
+  margin: 0 0 20px 25px;
+}
+
+/* line 145, ../sass/styles.scss */
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+/* line 148, ../sass/styles.scss */
+li {
+  line-height: 40px;
+}
+
+/* line 152, ../sass/styles.scss */
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+/* line 158, ../sass/styles.scss */
+dl {
+  margin-bottom: 40px;
+}
+
+/* line 162, ../sass/styles.scss */
+dt,
+dd {
+  line-height: 40px;
+}
+
+/* line 165, ../sass/styles.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 168, ../sass/styles.scss */
+dd {
+  margin-left: 20px;
+}
+
+/* line 172, ../sass/styles.scss */
+.dl-horizontal {
+  *zoom: 1;
+}
+/* line 61, ../sass/styles.scss */
+.dl-horizontal:before, .dl-horizontal:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 68, ../sass/styles.scss */
+.dl-horizontal:after {
+  clear: both;
+}
+/* line 174, ../sass/styles.scss */
+.dl-horizontal dt {
+  float: left;
+  width: 200px;
+  clear: left;
+  text-align: right;
+}
+/* line 180, ../sass/styles.scss */
+.dl-horizontal dd {
+  margin-left: 200px;
+}
+
+/* line 187, ../sass/styles.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 190, ../sass/styles.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 193, ../sass/styles.scss */
+em {
+  font-style: italic;
+}
+
+/* line 196, ../sass/styles.scss */
+cite {
+  font-style: normal;
+}
+
+/* line 205, ../sass/styles.scss */
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid white;
+}
+
+/* line 213, ../sass/styles.scss */
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+/* line 218, ../sass/styles.scss */
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+/* line 224, ../sass/styles.scss */
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 40px;
+  border-left: 5px solid #999999;
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 300;
+  font-style: italic;
+}
+/* line 232, ../sass/styles.scss */
+blockquote p {
+  margin-bottom: 0;
+}
+/* line 235, ../sass/styles.scss */
+blockquote small {
+  display: block;
+  line-height: 40px;
+  color: #999999;
+}
+/* line 239, ../sass/styles.scss */
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+/* line 245, ../sass/styles.scss */
+blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #333333;
+  border-left: 0;
+}
+/* line 252, ../sass/styles.scss */
+blockquote.pull-right p,
+blockquote.pull-right small {
+  text-align: right;
+}
+/* line 256, ../sass/styles.scss */
+blockquote.pull-right small:before {
+  content: '';
+}
+/* line 259, ../sass/styles.scss */
+blockquote.pull-right small:after {
+  content: '\00A0 \2014';
+}
+
+/* line 271, ../sass/styles.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 274, ../sass/styles.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 279, ../sass/styles.scss */
+.hide {
+  display: none;
+}
+
+/* line 282, ../sass/styles.scss */
+.show {
+  display: block;
+}
+
+/* line 287, ../sass/styles.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 292, ../sass/styles.scss */
+.affix {
+  position: fixed;
+}
+
+/* line 300, ../sass/styles.scss */
+.container {
+  width: 700px;
+  padding: 50px 0 50px;
+  margin: 0 auto;
+}
+
+/* line 306, ../sass/styles.scss */
+h1.blog-title {
+  margin-bottom: 0;
+}
+
+/* line 307, ../sass/styles.scss */
+p.lead {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 42px;
+}
+
+/* line 308, ../sass/styles.scss */
+p.date {
+  font-style: italic;
+  font-size: 14px;
+  margin: 0 0 18px;
+  line-height: 16px;
+}
+
+/* line 310, ../sass/styles.scss */
+article.post {
+  border-bottom: 2px solid #eeeeee;
+}
