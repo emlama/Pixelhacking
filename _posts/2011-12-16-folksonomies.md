@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Folksonomies, you me and everyone.
-published: true
+published: false
 
 ---
 Recently while conducting stakeholder interviews for a library redesign project, I came a cross the term Folksonomy. I made a note to come back and revisit this word as the meanings it instantly conveyed to me seemed worth exploring.
