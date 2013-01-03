@@ -3,7 +3,7 @@
 # ----------------------- #
 
 server: true
-exclude:
+exclude: sass
 auto: true
 
 url: http://pixelhacking.com
