@@ -85,12 +85,13 @@ body {
 p {
   margin-bottom: 27px;
   font-size: 24px;
-  line-height: 36px;
+  line-height: 39.6px;
 }
 
 /* line 101, ../sass/styles.scss */
 a:link {
   color: #ff3c78;
+  text-decoration: none;
 }
 
 /* line 102, ../sass/styles.scss */
@@ -434,7 +435,7 @@ p.lead {
 
 /* line 350, ../sass/styles.scss */
 article.post {
-  border-bottom: 4px solid #999999;
+  border-bottom: 1px solid #999999;
   padding-bottom: 18px;
   margin-bottom: 36px;
 }

@@ -95,10 +95,10 @@ body {
 p { 
   margin-bottom: $baseLineHeight * 1.5; 
   font-size: 24px;
-  line-height: $baseLineHeight * 2;
+  line-height: $baseLineHeight * 2.2;
 } 
 
-a:link { color: $linkColor; }
+a:link { color: $linkColor; text-decoration: none; }
 a:visited { color: $linkColor; } 
 a:hover { color: $linkColorHover; text-decoration: none; } 
 
@@ -348,7 +348,7 @@ p.lead { font-weight: 200; font-style: italic; font-size: 32px; line-height: 42p
 .date { font-style: italic; font-size: 14px; margin: 0 0 18px; line-height: 16px; }
 
 article.post {
-  border-bottom: 4px solid $grayLight;
+  border-bottom: 1px solid $grayLight;
   padding-bottom: $baseLineHeight;
   margin-bottom: $baseLineHeight * 2;
 }
