@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Group vs. Individual Performance
-published: true
+published: false
 
 ---
 I came across this article at [UXBooth.com](http://www.uxbooth.com/blog/design-studios-the-good-Thea-bad-and-the-science/) about the science behind Design Studios that explores what works and doesn't. What's amazing is that I still remember what nominal group technique is all the way back from college.

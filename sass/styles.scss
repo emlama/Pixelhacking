@@ -78,29 +78,29 @@ $containerWidth:        1080px;
 // Basic Typography
 // -------------------------
 
-body { 
+body {
   font-size: $baseFontSize;
-  line-height: $baseLineHeight; 
-  font-family: $baseFontFamily; 
-  font-style: normal; 
+  line-height: $baseLineHeight;
+  font-family: $baseFontFamily;
+  font-style: normal;
   font-weight: 300;
   letter-spacing: 0px;
-  background: $bodyBackground url('/images/strip.png') repeat-x top center; 
+  background: $bodyBackground url('/images/strip.png') repeat-x top center;
   color: $textColor;
   padding-top: 12px;
   font-size: 24px;
   line-height: $baseLineHeight * 2;
 }
 
-p { 
-  margin-bottom: $baseLineHeight * 1.5; 
+p {
+  margin-bottom: $baseLineHeight * 1.5;
   font-size: 24px;
-  line-height: $baseLineHeight * 2;
-} 
+  line-height: $baseLineHeight * 2.2;
+}
 
-a:link { color: $linkColor; }
-a:visited { color: $linkColor; } 
-a:hover { color: $linkColorHover; text-decoration: none; } 
+a:link { color: $linkColor; text-decoration: none; }
+a:visited { color: $linkColor; }
+a:hover { color: $linkColorHover; text-decoration: none; }
 
 
 // Headings
@@ -234,9 +234,9 @@ blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 $baseLineHeight * 1.5;
   border-left: 5px solid $grayLight;
-  font-size: 21px; 
-  line-height: 28px; 
-  font-weight: 300; 
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 300;
   font-style: italic;
   p {
     margin-bottom: 0;
@@ -344,11 +344,11 @@ header {
 }
 
 h1.blog-title { margin-bottom: 0; }
-p.lead { font-weight: 200; font-style: italic; font-size: 32px; line-height: 42px; } 
+p.lead { font-weight: 200; font-style: italic; font-size: 32px; line-height: 42px; }
 .date { font-style: italic; font-size: 14px; margin: 0 0 18px; line-height: 16px; }
 
 article.post {
-  border-bottom: 4px solid $grayLight;
+  border-bottom: 1px solid $grayLight;
   padding-bottom: $baseLineHeight;
   margin-bottom: $baseLineHeight * 2;
 }
@@ -369,7 +369,7 @@ div.related {
 
 .left {
   float: left;
-  width: 780px;
+  width: 700px;
 }
 
 .right {

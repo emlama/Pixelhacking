@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing a Good Proposal for a Conference
-published: true
+published: false
 
 ---
 
