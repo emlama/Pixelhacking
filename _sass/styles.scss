@@ -1,5 +1,5 @@
 @import "compass/reset";
-@import "base/base";
+@import "font-awesome";
 
 // Grays
 // -------------------------
@@ -27,8 +27,8 @@ $offWhite:              #F2F2ED;
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $offWhite;
-$textColor:             $grayDark;
+$bodyBackground:        #FFFFFD;
+$textColor:             #2F343B;
 
 
 // Links
@@ -44,18 +44,18 @@ $serifFontFamily:       sirba-web, Georgia, "Times New Roman", Times, serif;
 $monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
 $baseFontSize:          16px;
-$baseFontFamily:        $sansFontFamily;
+$baseFontFamily:        $serifFontFamily;
 $baseLineHeight:        18px;
 $altFontFamily:         $serifFontFamily;
 
 $headingsFontFamily:    $serifFontFamily; // empty to use BS default, $baseFontFamily
-$headingsFontWeight:    400;    // instead of browser default, bold
-$headingsColor:         $black; // empty to use BS default, $textColor
+$headingsFontWeight:    300;    // instead of browser default, bold
+$headingsColor:         #2F343B; // empty to use BS default, $textColor
 
 
 // Sizing
 // -------------------------
-$containerWidth:        1080px;
+$containerWidth:        700px;
 
 // Mixins
 // -------------------------
@@ -83,19 +83,18 @@ body {
   line-height: $baseLineHeight;
   font-family: $baseFontFamily;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0px;
-  background: $bodyBackground url('/images/strip.png') repeat-x top center;
+  background: $bodyBackground url('/images/noisy.png') repeat top center;
   color: $textColor;
-  padding-top: 12px;
   font-size: 24px;
   line-height: $baseLineHeight * 2;
 }
 
 p {
   margin-bottom: $baseLineHeight * 1.5;
-  font-size: 24px;
-  line-height: $baseLineHeight * 2.2;
+  font-size: 22px;
+  line-height: $baseLineHeight * 2.1;
 }
 
 a:link { color: $linkColor; text-decoration: none; }
@@ -111,18 +110,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $headingsFontFamily;
   font-weight: $headingsFontWeight;
   line-height: 1;
+  font-weight: bold;
+
   color: $headingsColor;
   text-rendering: optimizelegibility; // Fix the character spacing for headings
+  margin: 80px 0 20px 0;
   small {
     font-weight: normal;
     line-height: 1;
     color: $grayLight;
   }
 }
-h1 { font-size: 52px; line-height: 62px; }
+h1 { font-size: 52px; line-height: 62px; font-style: normal; font-weight: 700; }
 h2 { font-size: 36px; line-height: 45px; }
 h3 { font-size: 30px; line-height: 36px; }
-h4 { font-size: 24px; line-height: 27px; }
+h4 { font-size: 30px; line-height: 27px; }
 h5 { font-size: 16px; line-height: 26px; }
 h6 { font-size: 16px; line-height: 18px; }
 
@@ -306,10 +308,12 @@ blockquote {
 // -------------------------
 
 header {
+  background: $bodyBackground url('/images/strip.png') repeat-x top center;
   width: 100%;
   height: 60px;
   background-color: $blue;
   margin-bottom: 80px;
+  padding-top: 12px;
   div {
     width: $containerWidth;
     margin: 0 auto;
@@ -338,9 +342,9 @@ header {
 
 .container {
   width: $containerWidth;
-  padding: 50px 0 50px;
+  padding: 0 30px 50px;
   margin: 0 auto;
-  overflow: visible;
+  overflow: auto;
 }
 
 h1.blog-title { margin-bottom: 0; }
@@ -362,8 +366,18 @@ div.related {
     line-height: 36px;
   }
   ul li {
+    @include clearfix;
     font-size: 24px;
     line-height: 30px;
+    a {
+      float: left;
+    }
+    .date {
+      margin: 0;
+      line-height: 36px;
+      float: left;
+      width: 120px;
+    }
   }
 }
 

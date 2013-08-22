@@ -1,6 +1,5 @@
 source "http://rubygems.org"
 
-gem "jekyll"
-gem "jekyll-s3"
+gem "jekyll", :git => "https://github.com/mojombo/jekyll.git"
 gem "compass"
 gem "foreman"
