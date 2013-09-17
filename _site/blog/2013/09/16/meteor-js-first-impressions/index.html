@@ -30,13 +30,11 @@
         </header>
         <div class="container">
 
-    <div class="left">
+<div class="left">
 	<article class="post">
-
-	    <h1>Meteor.js, First Impressions</h1>
-<!-- 	    <p class="date">Published Monday September 16 2013</p>
- -->
-	    <p>Since taking up Node.js development I haven&#39;t been fully satisfied with the Express.js/MVC styled approach of application development. For whatever reason (me?) my code base ends up getting messy and I feel disheveled working on my projects.</p>
+		<h1>Meteor.js, First Impressions</h1>
+		<p class="date">Published Monday September 16 2013</p>
+		<p>Since taking up Node.js development I haven&#39;t been fully satisfied with the Express.js/MVC styled approach of application development. For whatever reason (me?) my code base ends up getting messy and I feel disheveled working on my projects.</p>
 
 <p>So when a recent work project came up that had a requirement for multiple users interacting real-time I thought I would use it as an opportunity to evaluate Meteor.js. Disclaimer, I only built a prototype alongside the actual product so I won&#39;t get to test the app at scale.</p>
 
@@ -54,7 +52,7 @@
 <p>I&#39;ve also been pretty happy with how applications are structured. For instance, you can create as many template files as you want and Meteor will do the dirty work of picking them up and concatenating all of them. Then for each template you can define all the helper functions you need in the following manner.</p>
 <div class="highlight"><pre><code class="html"><a name="line-1"></a>// In template.html
 <a name="line-2"></a><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
-<a name="line-3"></a>  <span class="nt">&lt;nav&gt;</span>Welcome, {{ username }}<span class="nt">&lt;/nav&gt;</span>
+<a name="line-3"></a>  <span class="nt">&lt;nav&gt;</span>Welcome, {% raw %}{{ username }}{% endraw %}<span class="nt">&lt;/nav&gt;</span>
 <a name="line-4"></a><span class="nt">&lt;/template&gt;</span>
 </code></pre></div><div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="c1">// In main.js</span>
 <a name="line-2"></a>
@@ -81,18 +79,13 @@
 	<div class="related">
 	<h3>Recent Posts</h3>
 	<ul class="unstyled">
-
+	
 		<li><span class="date">September 16, 2013</span><a href="/blog/2013/09/16/meteor-js-first-impressions/">Meteor.js, First Impressions</a></li>
+	
 	</ul>
 	<p><a href="/archives.html">View All Posts <i class="icon-angle-right"></i></a></p>
 </div>
 </div>
-
-<!-- <div class="right">
-	<p>I design and develop interfaces for <a href="http://www.viminteractive.com">VIM Interactive</a>. By night, I organize <a href="http://betascape.org">Betascape</a> a weekend long exploratorium for artists and technologists.</p>
-
-	<p>If you want to know more about me check out <a href="http://matthewforr.com">matthewforr.com</a> or find me on <a href="http://twitter.com/matthewforr">Twitter</a>.</p>
-</div> -->
 
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

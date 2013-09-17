@@ -1,5 +1,7 @@
 @import "compass/reset";
 @import "font-awesome";
+@import "syntax";
+@import "linenumbers";
 
 // Grays
 // -------------------------
@@ -395,4 +397,9 @@ div.related {
     font-size: 18px;
     line-height: 24px;
   }
+}
+
+pre {
+  font-family: "Monaco",monospace,serif;
+  font-size: 0.7em;
 }
