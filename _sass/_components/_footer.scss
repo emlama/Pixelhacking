@@ -1,0 +1,50 @@
+footer {
+  color: $white;
+
+  .social {
+    background-color: #EDEDED;
+    p {
+      margin: 0;
+      font-size: 24px;
+      line-height: 64px;
+      text-align: center;
+      a {
+        color: #303030;
+        margin-right: 0.5em;
+      }
+    }
+  }
+  .copyright {
+    height: 36px;
+    background-color: #303030;
+    color: #8D8D8D;
+    p {
+      padding: 12px 0;
+      line-height: 1em;
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}
+
+
+// Sticky footer code
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px;
+}
+
+.page-wrapper:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrapper:after {
+  /* .push must be the same height as footer */
+  height: 100px;
+}

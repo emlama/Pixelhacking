@@ -1,0 +1,212 @@
+.hero {
+  max-width: 800px;
+  margin: 0 auto;
+  p {
+    font-size: 36px;
+    line-height: 46px;
+    text-align: center;
+    font-weight: 500;
+    small {
+      font-style: italic;
+      color: $gray;
+    }
+  }
+}
+
+.date {
+  @include clearfix;
+  // @include width;
+
+  position: relative;
+  z-index: 0;
+  margin: 60px auto;
+
+  hr {
+    z-index: 1;
+  }
+  p {
+    position: absolute;
+    background-color: #FFF;
+    z-index: 9;
+    top: -3px;
+    left: 50%;
+    margin: 0;
+    width: 70px;
+    margin-left: -50px;
+    padding: 0 15px;
+    font-weight: 500;
+    color: #1C2438;
+    font-size: 36px;
+    line-height: 36px;
+    @include box-sizing(content-box);
+    text-align: center;
+  }
+}
+
+$closedHeight:    200px;
+$openHeight:      502px;
+
+.project {
+  @include clearfix;
+  height: $closedHeight;
+  @include transition (all 0.5s ease-in-out);
+  overflow: hidden;
+  margin-bottom: 75px;
+  border-bottom: 1px solid #C9C9C9;
+
+  .description {
+    float: left;
+    width: calc(45% - 64px);
+
+    h2 {
+      font-size: 32px;
+      font-weight: 300;
+      margin: 0;
+    }
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+      font-family: $sansFontFamily;
+    }
+  }
+
+  .controls {
+    font-size: 18px;
+    margin: 0 20px;
+    width: 24px;
+    height: 100%;
+    float: left;
+    @include clearfix;
+
+    .fa-border {
+      //#E6E7E8;
+      border-radius: 3px;
+      border: 2px solid $fadedPink;
+      float: left;
+      margin-bottom: 4px;
+      color: $fadedPink;
+    }
+  }
+
+  &:hover .controls .fa-border {
+    color: $pink;
+    border-color: $pink;
+    @include transition (all 0.5s ease-in-out);
+  }
+
+  .controls i.fa.disabled {
+    color: $fadedPink;
+    border-color: $fadedPink;
+    cursor: default;
+  }
+
+  .pictures {
+    width: 55%;
+    height: $closedHeight;
+    @include transition (all 0.5s ease-in-out);
+    overflow: hidden;
+    float: left;
+    position: relative;
+
+    .slider {
+      width: 300%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .group {
+      float: left;
+      margin-right: 30px;
+      position: relative;
+
+      img { display: block; @include transition (all 0.5s ease-in-out); }
+    }
+
+    .ipad-iphone {
+      width: 492px;
+      // width: calc(40% - 20px);
+
+      .iphone {
+        position: absolute;
+        bottom: 125px;
+        left: 323px;
+      }
+    }
+
+    .web-iphone {
+      width: 561px;
+
+      .iphone {
+        position: absolute;
+        bottom: 54px;
+        left: 393px;
+      }
+    }
+  }
+
+  &.no-controls {
+    .controls {
+      display: none;
+    }
+    .pictures {
+      margin-left: 64px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    .pictures .group .iphone {
+      bottom: 135px;
+    }
+
+    .pictures .group.web-iphone .iphone {
+      bottom: 64px;
+    }
+  }
+
+  &.iphone {
+    .pictures {
+      margin-top: 10px;
+    }
+  }
+
+  &.iphone:hover {
+    .pictures {
+      margin-top: 0;
+    }
+  }
+
+  &.open, &.open:hover {
+    height: $openHeight;
+    .pictures {
+      height: $openHeight;
+      margin-top: 0;
+      // .slider {
+      //   height: $openHeight;
+      // }
+      .group img.iphone {
+        bottom: 0;
+      }
+    }
+  }
+
+  &.open.iphone {
+    height: 331px;
+    .pictures {
+      height: 351px;
+    }
+  }
+
+  &.open.web {
+    height: 428px;
+    .pictures {
+      height: 428px;
+    }
+  }
+}
+
+.year .project:last-child {
+  margin-bottom: 0;
+}

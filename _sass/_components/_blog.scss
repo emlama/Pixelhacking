@@ -1,0 +1,62 @@
+// Blog Specific Styles
+// -------------------------
+
+.container {
+  @include width;
+  overflow: auto;
+}
+
+// h1.blog-title { margin-bottom: 0; }
+// p.lead { font-weight: 200; font-style: italic; font-size: 32px; line-height: 42px; }
+// .date { font-style: italic; font-size: 14px; margin: 0 0 18px; line-height: 16px; }
+
+// article.post {
+//   border-bottom: 1px solid $grayLight;
+//   padding-bottom: $baseLineHeight;
+//   margin-bottom: $baseLineHeight * 2;
+// }
+
+// // Recent Post Styles
+// // --------------------------
+
+// div.related {
+//   h1 {
+//     font-size: 30px;
+//     line-height: 36px;
+//   }
+//   ul li {
+//     @include clearfix;
+//     font-size: 24px;
+//     line-height: 30px;
+//     a {
+//       float: left;
+//     }
+//     .date {
+//       margin: 0;
+//       line-height: 36px;
+//       float: left;
+//       width: 120px;
+//     }
+//   }
+// }
+
+// .left {
+//   float: left;
+//   width: 700px;
+// }
+
+// .right {
+//   margin-left: 60px;
+//   float: left;
+//   width: 240px;
+//   padding-top: $baseLineHeight;
+//   p {
+//     font-size: 18px;
+//     line-height: 24px;
+//   }
+// }
+
+// pre {
+//   font-family: "Monaco",monospace,serif;
+//   font-size: 0.7em;
+// }
