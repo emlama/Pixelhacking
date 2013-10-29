@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,77 +16,290 @@
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-<div class="page-wrapper">
-  <header>
-      <div>
-          <h1><a href="/index.html">PixelHacking</a></h1>
-      </div>
-  </header>
-  <div class="container">
-<div class="left">
-	<article class="post">
-	    <h1>Meteor.js, First Impressions</h1>
-<!-- 	    <p class="date">Published Monday September 16 2013</p>
- -->
-	    <p>Since taking up Node.js development I haven&#39;t been fully satisfied with the Express.js/MVC styled approach of application development. For whatever reason (me?) my code base ends up getting messy and I feel disheveled working on my projects.</p>
-
-<p>So when a recent work project came up that had a requirement for multiple users interacting real-time I thought I would use it as an opportunity to evaluate Meteor.js. Disclaimer, I only built a prototype alongside the actual product so I won&#39;t get to test the app at scale.</p>
-
-<p>For those who haven&#39;t heard about it, go watch the Meteor <a href="http://www.meteor.com/screencast" target="_blank">intro video</a> and <a href="http://www.meteor.com/authcast" target="_blank">sequel</a>. Awesome stuff, huh?</p>
-
-<p>So far I am delighted ^_^</p>
-
-<p>The reactive datasources are truly as simple as they seem. For instance, with the following four lines my app is automatically watching for changes to a Collection.</p>
-<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="nx">Tweets</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s1">&#39;tweets&#39;</span><span class="p">);</span>
-<a name="line-2"></a>
-<a name="line-3"></a><span class="nx">Template</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">tweets</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="line-4"></a><span class="k">return</span> <span class="nx">Tweets</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span> <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span> <span class="nx">created_at</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">}</span> <span class="p">});</span>
-<a name="line-5"></a><span class="p">}</span>
-</code></pre></div>
-<p>I&#39;ve also been pretty happy with how applications are structured. For instance, you can create as many template files as you want and Meteor will do the dirty work of picking them up and concatenating all of them. Then for each template you can define all the helper functions you need in the following manner.</p>
-<div class="highlight"><pre><code class="html"><a name="line-1"></a>// In template.html
-<a name="line-2"></a><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
-<a name="line-3"></a>  <span class="nt">&lt;nav&gt;</span>Welcome, {{ username }}<span class="nt">&lt;/nav&gt;</span>
-<a name="line-4"></a><span class="nt">&lt;/template&gt;</span>
-</code></pre></div><div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="c1">// In main.js</span>
-<a name="line-2"></a>
-<a name="line-3"></a><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">isClient</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-4"></a>  <span class="nx">Template</span><span class="p">.</span><span class="nx">nav</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="line-5"></a>    <span class="k">return</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span>
-<a name="line-6"></a>  <span class="p">};</span>
-<a name="line-7"></a><span class="p">}</span>
-</code></pre></div>
-<p>I really like how I can break my templates and views down into smaller and smaller chunks and then piece them together as needed. After working in Backbone.js a good bit recently it feels like the &#39;right&#39; amount of boilerplate code.</p>
-
-<p>So what have I been frustrated so far?</p>
-
-<p>Well, developing packages isn&#39;t simple. It took me a while to figure out the proper way to specify a package to use straight from a github repo. I.E. The recent 0.6.5 release changed how dependencies in pacakages are specified.</p>
-
-<p>It certainly is still an emerging framework and because of this APIs for packages still aren&#39;t &#39;nailed down&#39;. That being said, it looks like that is one of the <a href="https://trello.com/b/hjBDflxp/meteor-roadmap" target="_blank">next items on the roadmap</a>. I think it&#39;s safe to say that meteorite will be rolled into the core app pretty soon.</p>
-
-<p>Additionally, understanding the core parts of how an application is built isn&#39;t simple. For example, did you know that Meteor runs within a Node.js Fiber? It is in fact a synchronous framework. Moreover, digging into the guts of the framework isn&#39;t for the feint of heart. The core files are pretty well documented but I&#39;d love to see a talk on how the whole framework is bootstrapped.</p>
-
-<p>So far that&#39;s all I have, if you haven&#39;t yet I hope you give this framework a try.</p>
-
-	</article>
-
-	<div class="related">
-	<h3>Recent Posts</h3>
-	<ul class="unstyled">
-	
-		<li><span class="date">September 16, 2013</span><a href="/blog/2013/09/16/meteor-js-first-impressions/">Meteor.js, First Impressions</a></li>
-	
-	</ul>
-	<p><a href="/archives.html">View All Posts <i class="icon-angle-right"></i></a></p>
-</div>
-</div>
-
-<!-- <div class="right">
-	<p>I design and develop interfaces for <a href="http://www.viminteractive.com">VIM Interactive</a>. By night, I organize <a href="http://betascape.org">Betascape</a> a weekend long exploratorium for artists and technologists.</p>
-
-	<p>If you want to know more about me check out <a href="http://matthewforr.com">matthewforr.com</a> or find me on <a href="http://twitter.com/matthewforr">Twitter</a>.</p>
-</div> -->
+  <div class="page-wrapper">
+<header>
+  <div>
+    <h1><a href="/">Matthew Forr</a></h1>
+    <ul>
+      <li><a href="#">Resume</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
   </div>
+</header>
+      <div class="hero">
+        <p>I'm currently designing and building digital products for <a href="http://www.viminteractive.com">Vim Interactive</a> in <a href="http://visitbaltimore.com">Baltimore, MD</a>.</p>
+        <p><small>This is my recent work.</small></p>
+      </div>
+
+      <div class="container">
+        <section class="year">
+          <div class="date">
+            <hr>
+            <p>2013</p>
+          </div>
+
+          <article class="project">
+            <div class="description">
+              <h2>Catapult Mobile</h2>
+              <p>Catapult.org is a non-profit startup that connects projects that empower women in the developing world with donors. Sort of like a non-profit Kickstarter. I was the lead UX Designer and Front-End developer of their new mobile website.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-home-ipad.png" class="ipad">
+                  <img src="images/catapult-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-search-ipad.png" class="ipad">
+                  <img src="images/catapult-search-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-project-ipad.png" class="ipad">
+                  <img src="images/catapult-project-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Air National Guard Mobile</h2>
+              <p>When Vim Interactive joined the LM&amp;O team the first project they asked us to complete was a mobile site for the Air National Guard. This had been on their wishlist for a long time but never seemed to go anywhere. We knocked it out in a few weeks.</p>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="iphone group">
+                  <img src="images/ang-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="iphone group">
+                  <img src="images/ang-menu-iphone.png" class="iphone">
+                </div>
+
+                <div class="iphone group">
+                  <img src="images/ang-new-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project web">
+            <div class="description">
+              <h2>Public Knowledge</h2>
+              <p>Public Knowledge is a DC based non-profit that works to promote free and open access to the internet. I worked with them to revamp their information architecture and wireframing a new site. As a web designer and developer I was proud to help an organization with a mission so close to what I do.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/pk-home-web.png" class="web">
+                  <img src="images/pk-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="web-iphone group">
+                  <img src="images/pk-issues-web.png" class="web">
+                  <img src="images/pk-issues-iphone.png" class="iphone">
+                </div>
+
+                <div class="web-iphone group">
+                  <img src="images/pk-issue-web.png" class="web">
+                  <img src="images/pk-issue-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Watchtower</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+<!--           <article class="project">
+            <div class="description">
+              <h2>Twitter Takeover</h2>
+              <p>The social media team at LM&amp;O ran the first twitter takeover as a simple concept with Dan Ernhart and the results were so stellar we moved forward with building a platform to make the concept really awesome. I lead the design studio to concept the initial product and coded up a functional prototype based on the sketches of the team.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-home-ipad.png" class="ipad">
+                  <img src="images/catapult-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-search-ipad.png" class="ipad">
+                  <img src="images/catapult-search-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-project-ipad.png" class="ipad">
+                  <img src="images/catapult-project-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article> -->
+
+        </section>
+
+        <section class="year">
+          <div class="date">
+            <hr>
+            <p>2012</p>
+          </div>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>AccessMT Multi-TouchTable</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <video width="560" height="336" controls>
+                <source src="images/AccessMTVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+<!--               <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div> -->
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Salesbag</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Howard County Library System</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project web">
+            <div class="description">
+              <h2>Betascape 2012</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web group">
+                  <img src="images/betascape-home-web.png" class="web">
+                </div>
+
+                <div class="web group">
+                  <img src="images/betascape-schedule-web.png" class="web">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Second Baltimore Hackathon</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </section>
+      </div>
+
+    </div>
       <footer>
         <div class="social">
           <div class="row">
@@ -111,6 +321,21 @@
           </div>
         </div>
       </footer>
-    </div>
-  </body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="/js/plugins.js"></script>
+<script src="/js/script.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42958980-1', 'pixelhacking.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
 </html>

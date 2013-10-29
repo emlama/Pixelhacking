@@ -82,22 +82,22 @@ $openHeight:      502px;
     .fa-border {
       //#E6E7E8;
       border-radius: 3px;
-      border: 2px solid $fadedPink;
+      border: 2px solid #E6E7E8;
       float: left;
       margin-bottom: 4px;
-      color: $fadedPink;
+      color: #E6E7E8;
     }
   }
 
   &:hover .controls .fa-border {
-    color: $pink;
-    border-color: $pink;
+    color: $blue;
+    border-color: $blue;
     @include transition (all 0.5s ease-in-out);
   }
 
   .controls i.fa.disabled {
-    color: $fadedPink;
-    border-color: $fadedPink;
+    color: #E6E7E8;
+    border-color: #E6E7E8;
     cursor: default;
   }
 

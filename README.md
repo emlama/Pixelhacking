@@ -3,3 +3,5 @@
 
 # Styles
 - Need a style fore `<code>` tags
+
+http://css-tricks.com/slider-with-sliding-backgrounds/

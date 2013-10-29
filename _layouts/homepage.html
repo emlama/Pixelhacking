@@ -1,32 +1,286 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 {% include head.html %}
 <body>
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-<div class="page-wrapper">
+  <div class="page-wrapper">
 {% include homenav.html %}
+      <div class="hero">
+        <p>I'm currently designing and building digital products for <a href="http://www.viminteractive.com">Vim Interactive</a> in <a href="http://visitbaltimore.com">Baltimore, MD</a>.</p>
+        <p><small>This is my recent work.</small></p>
+      </div>
 
-  <div class="row">
-    <div class="large-12 columns hero">
-      <p>I'm currently designing and building digital products for Vim Interactive in Baltimore, MD.</p>
-      <p><small>This is my recent work.</small></p>
+      <div class="container">
+        <section class="year">
+          <div class="date">
+            <hr>
+            <p>2013</p>
+          </div>
+
+          <article class="project">
+            <div class="description">
+              <h2>Catapult Mobile</h2>
+              <p>Catapult.org is a non-profit startup that connects projects that empower women in the developing world with donors. Sort of like a non-profit Kickstarter. I was the lead UX Designer and Front-End developer of their new mobile website.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-home-ipad.png" class="ipad">
+                  <img src="images/catapult-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-search-ipad.png" class="ipad">
+                  <img src="images/catapult-search-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-project-ipad.png" class="ipad">
+                  <img src="images/catapult-project-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Air National Guard Mobile</h2>
+              <p>When Vim Interactive joined the LM&amp;O team the first project they asked us to complete was a mobile site for the Air National Guard. This had been on their wishlist for a long time but never seemed to go anywhere. We knocked it out in a few weeks.</p>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="iphone group">
+                  <img src="images/ang-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="iphone group">
+                  <img src="images/ang-menu-iphone.png" class="iphone">
+                </div>
+
+                <div class="iphone group">
+                  <img src="images/ang-new-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project web">
+            <div class="description">
+              <h2>Public Knowledge</h2>
+              <p>Public Knowledge is a DC based non-profit that works to promote free and open access to the internet. I worked with them to revamp their information architecture and wireframing a new site. As a web designer and developer I was proud to help an organization with a mission so close to what I do.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/pk-home-web.png" class="web">
+                  <img src="images/pk-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="web-iphone group">
+                  <img src="images/pk-issues-web.png" class="web">
+                  <img src="images/pk-issues-iphone.png" class="iphone">
+                </div>
+
+                <div class="web-iphone group">
+                  <img src="images/pk-issue-web.png" class="web">
+                  <img src="images/pk-issue-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Watchtower</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+<!--           <article class="project">
+            <div class="description">
+              <h2>Twitter Takeover</h2>
+              <p>The social media team at LM&amp;O ran the first twitter takeover as a simple concept with Dan Ernhart and the results were so stellar we moved forward with building a platform to make the concept really awesome. I lead the design studio to concept the initial product and coded up a functional prototype based on the sketches of the team.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-home-ipad.png" class="ipad">
+                  <img src="images/catapult-home-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-search-ipad.png" class="ipad">
+                  <img src="images/catapult-search-iphone.png" class="iphone">
+                </div>
+
+                <div class="ipad-iphone group">
+                  <img src="images/catapult-project-ipad.png" class="ipad">
+                  <img src="images/catapult-project-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article> -->
+
+        </section>
+
+        <section class="year">
+          <div class="date">
+            <hr>
+            <p>2012</p>
+          </div>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>AccessMT Multi-TouchTable</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <video width="560" height="336" controls>
+                <source src="images/AccessMTVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+<!--               <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div> -->
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Salesbag</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Howard County Library System</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project web">
+            <div class="description">
+              <h2>Betascape 2012</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web group">
+                  <img src="images/betascape-home-web.png" class="web">
+                </div>
+
+                <div class="web group">
+                  <img src="images/betascape-schedule-web.png" class="web">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project iphone no-controls">
+            <div class="description">
+              <h2>Second Baltimore Hackathon</h2>
+              <p>This project started as a simple internal tool for us to keep track of our clients MediaTemple servers. I took the original concept and turned it into a fully featured application.</p>
+            </div>
+
+            <div class="controls">
+              <a href="#"><i class="fa fa-chevron-right fa-border"></i></a>
+              <a href="#"><i class="fa fa-chevron-left disabled fa-border"></i></a>
+            </div>
+
+            <div class="pictures">
+              <div class="slider" data-pos="0">
+                <div class="web-iphone group">
+                  <img src="images/watchtower-home-web.png" class="web">
+                  <img src="images/watchtower-home-iphone.png" class="iphone">
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </section>
+      </div>
+
     </div>
-  </div>
-
-  <div class="year">
-    <p>2013</p>
-  </div>
-
-
-  <div class="container">
-{{ content }}
-  </div>
 {% include footer.html %}
-    </div>
-  </body>
+{% include javascript_includes.html %}
+</body>
 </html>
