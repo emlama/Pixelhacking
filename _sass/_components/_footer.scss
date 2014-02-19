@@ -1,6 +1,8 @@
 footer {
   color: $white;
 
+  margin-top: 60px;
+
   .social {
     background-color: #EDEDED;
     p {
@@ -11,6 +13,9 @@ footer {
       a {
         color: #303030;
         margin-right: 0.5em;
+        &:hover {
+          color: $pink;
+        }
       }
     }
   }

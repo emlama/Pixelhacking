@@ -1,16 +1,54 @@
+// .hero {
+//   max-width: 800px;
+//   margin: 140px auto 0;
+//   p {
+//     font-size: 36px;
+//     line-height: 46px;
+//     text-align: center;
+//     font-weight: 500;
+//     small {
+//       font-style: italic;
+//       color: $gray;
+//     }
+//   }
+// }
+
 .hero {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  background-color: #263248;
+  margin: auto 0;
+  padding: 100px;
+
   p {
-    font-size: 36px;
-    line-height: 46px;
-    text-align: center;
+    max-width: 900px;
+    min-width: 750px;
+    margin: 0 auto;
+    font-size: 52px;
+    color: #F2F2ED;
+    line-height: 1.3em;
+    // font-size: 36px;
+    // line-height: 46px;
+    // text-align: center;
     font-weight: 500;
     small {
       font-style: italic;
       color: $gray;
     }
   }
+  .contact {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+
+.recent {
+  margin: 120px auto 160px;
+  max-width: 900px;
+  text-align: center;
+  font-size: 44px;
+  font-style: italic;
+  color: #5e5e5e;
+  line-height: 1.5em;
 }
 
 .date {
@@ -62,6 +100,7 @@ $openHeight:      502px;
       font-size: 32px;
       font-weight: 300;
       margin: 0;
+      cursor: pointer;
     }
     p {
       font-size: 18px;
@@ -77,6 +116,7 @@ $openHeight:      502px;
     width: 24px;
     height: 100%;
     float: left;
+    @include transition (all 0.5s ease-in-out);
     @include clearfix;
 
     .fa-border {
@@ -86,13 +126,13 @@ $openHeight:      502px;
       float: left;
       margin-bottom: 4px;
       color: #E6E7E8;
+      @include transition (all 0.5s ease-in-out);
     }
   }
 
   &:hover .controls .fa-border {
     color: $blue;
     border-color: $blue;
-    @include transition (all 0.5s ease-in-out);
   }
 
   .controls i.fa.disabled {
@@ -108,6 +148,7 @@ $openHeight:      502px;
     overflow: hidden;
     float: left;
     position: relative;
+    cursor: pointer;
 
     .slider {
       width: 300%;
@@ -156,19 +197,18 @@ $openHeight:      502px;
   }
 
   &:hover {
-    cursor: pointer;
     .pictures .group .iphone {
-      bottom: 135px;
+      bottom: 130px;
     }
 
     .pictures .group.web-iphone .iphone {
-      bottom: 64px;
+      bottom: 60px;
     }
   }
 
   &.iphone {
     .pictures {
-      margin-top: 10px;
+      margin-top: 5px;
     }
   }
 
@@ -206,6 +246,8 @@ $openHeight:      502px;
     }
   }
 }
+
+// .year {margin-top: 140px;}
 
 .year .project:last-child {
   margin-bottom: 0;

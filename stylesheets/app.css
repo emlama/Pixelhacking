@@ -2270,7 +2270,8 @@ header {
         font-weight: 300; }
 
 footer {
-  color: white; }
+  color: white;
+  margin-top: 60px; }
   footer .social {
     background-color: #EDEDED; }
     footer .social p {
@@ -2281,6 +2282,8 @@ footer {
       footer .social p a {
         color: #303030;
         margin-right: 0.5em; }
+        footer .social p a:hover {
+          color: #ff3c78; }
   footer .copyright {
     height: 36px;
     background-color: #303030;
@@ -2308,16 +2311,33 @@ footer, .page-wrapper:after {
   height: 100px; }
 
 .hero {
-  max-width: 800px;
-  margin: 0 auto; }
+  max-width: 100%;
+  background-color: #263248;
+  margin: auto 0;
+  padding: 100px; }
   .hero p {
-    font-size: 36px;
-    line-height: 46px;
-    text-align: center;
+    max-width: 900px;
+    min-width: 750px;
+    margin: 0 auto;
+    font-size: 52px;
+    color: #F2F2ED;
+    line-height: 1.3em;
     font-weight: 500; }
     .hero p small {
       font-style: italic;
       color: #9b9a9b; }
+  .hero .contact {
+    margin-top: 20px;
+    font-size: 20px; }
+
+.recent {
+  margin: 120px auto 160px;
+  max-width: 900px;
+  text-align: center;
+  font-size: 44px;
+  font-style: italic;
+  color: #5e5e5e;
+  line-height: 1.5em; }
 
 .date {
   *zoom: 1;
@@ -2370,7 +2390,8 @@ footer, .page-wrapper:after {
     .project .description h2 {
       font-size: 32px;
       font-weight: 300;
-      margin: 0; }
+      margin: 0;
+      cursor: pointer; }
     .project .description p {
       font-size: 18px;
       line-height: 24px;
@@ -2382,6 +2403,9 @@ footer, .page-wrapper:after {
     width: 24px;
     height: 100%;
     float: left;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     *zoom: 1; }
     .project .controls:before, .project .controls:after {
       content: " ";
@@ -2393,13 +2417,13 @@ footer, .page-wrapper:after {
       border: 2px solid #E6E7E8;
       float: left;
       margin-bottom: 4px;
-      color: #E6E7E8; }
+      color: #E6E7E8;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
   .project:hover .controls .fa-border {
     color: #263248;
-    border-color: #263248;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
+    border-color: #263248; }
   .project .controls i.fa.disabled {
     color: #E6E7E8;
     border-color: #E6E7E8;
@@ -2412,7 +2436,8 @@ footer, .page-wrapper:after {
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     float: left;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     .project .pictures .slider {
       width: 300%;
       position: absolute;
@@ -2443,14 +2468,12 @@ footer, .page-wrapper:after {
     display: none; }
   .project.no-controls .pictures {
     margin-left: 64px; }
-  .project:hover {
-    cursor: pointer; }
-    .project:hover .pictures .group .iphone {
-      bottom: 135px; }
-    .project:hover .pictures .group.web-iphone .iphone {
-      bottom: 64px; }
+  .project:hover .pictures .group .iphone {
+    bottom: 130px; }
+  .project:hover .pictures .group.web-iphone .iphone {
+    bottom: 60px; }
   .project.iphone .pictures {
-    margin-top: 10px; }
+    margin-top: 5px; }
   .project.iphone:hover .pictures {
     margin-top: 0; }
   .project.open, .project.open:hover {

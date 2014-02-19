@@ -3,7 +3,7 @@
 */
 
 $(document).ready(function () {
-  $('.controls').on('click', 'a', function (e) {
+  $('.container').on('click', '.controls a', function (e) {
 
     e.preventDefault();
     e.stopPropagation()
@@ -18,18 +18,17 @@ $(document).ready(function () {
       $section.addClass('open');
     }
 
+    console.log($tar);
+
     // var currentOffset = parseInt($slide.css('left'));
     var currPos = $slide.data('pos');
     var newPos, targetSlide, next, rightEdge, frameWidth;
-    console.log('Currr pos ' + currPos);
 
     if ($('i', $tar).hasClass('fa-chevron-left')) {
       newPos = currPos - 1;
     } else {
       newPos = currPos + 1;
     }
-
-    console.log('new pos ' + newPos);
 
     if (newPos < 0 || newPos === $group.length) {
       return;
@@ -54,21 +53,21 @@ $(document).ready(function () {
     $slide.data('pos', newPos);
 
     if (newPos === 0) {
-      $('.fa-chevron-left').addClass('disabled');
+      $('.fa-chevron-left', $section).addClass('disabled');
     } else {
-      $('.fa-chevron-left').removeClass('disabled');
+      $('.fa-chevron-left', $section).removeClass('disabled');
     }
 
     if (newPos === $group.length - 1) {
-      $('.fa-chevron-right').addClass('disabled');
+      $('.fa-chevron-right', $section).addClass('disabled');
     } else {
-      $('.fa-chevron-right').removeClass('disabled');
+      $('.fa-chevron-right', $section).removeClass('disabled');
     }
 
   });
 
-  $('.container').on('click', '.project', function (e) {
-    $tar = $(e.currentTarget);
+  $('.container').on('click', 'h2, .pictures', function (e) {
+    $tar = $(e.currentTarget).parents('.project');
 
     if ($tar.hasClass('open')) {
       $('.open').removeClass('open');
