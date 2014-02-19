@@ -2315,7 +2315,8 @@ footer, .page-wrapper:after {
   max-width: 100%;
   background-color: #263248;
   margin: auto 0;
-  padding: 100px 100px 60px; }
+  padding: 100px 100px 60px;
+  text-align: center; }
   .hero p {
     max-width: 960px;
     min-width: 750px;
