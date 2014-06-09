@@ -37,7 +37,7 @@ header {
       padding-top: 12px;
       font-size: 24px;
       li {
-        @include inline-block;
+        display: inline-block;
         font-family: $sansFontFamily;
         margin-left: 20px;
         font-weight: 300;

@@ -28,8 +28,8 @@ permalink: /blog/:year/:month/:day/:title/
 plugins: _plugins
 # code_dir: downloads/code
 # category_dir: blog/categories
-pygments: true
-markdown: redcarpet-pygments
+highlighter: pygments
+markdown: redcarpet
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/

@@ -22,6 +22,13 @@ return Tweets.find({}, { sort: { created_at: -1 } });
 }
 ```
 
+{% highlight ruby linenos %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+
+
 I've also been pretty happy with how applications are structured. For instance, you can create as many template files as you want and Meteor will do the dirty work of picking them up and concatenating all of them. Then for each template you can define all the helper functions you need in the following manner.
 
 ``` html
